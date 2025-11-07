@@ -9,10 +9,10 @@
 struct Card
 {
     Card(Cards::Figure _figure, Cards::Suit _suit) : suit(_suit), figure(_figure) {}
-    Card(Cards::JokerType id) : suit(Cards::Suit::None), figure(Cards::Figure::None), jokerId(id) {}
+    Card(Cards::JokerType id) : jokerId(id) {}
 
-    Cards::Suit suit;
-    Cards::Figure figure;
+    Cards::Suit suit = Cards::Suit::None;
+    Cards::Figure figure = Cards::Figure::None;
     Cards::JokerType jokerId = Cards::JokerType::None;
 };
 

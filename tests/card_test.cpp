@@ -35,3 +35,11 @@ TEST(CardTest, PartialInvalidJokerCardIsInvalid)
     card.jokerId = Cards::JokerType::Red;
     EXPECT_FALSE(CardUtils::isValid(card));
 }
+
+//---------------------------------------------------------------------------------------------------------------------
+
+TEST(CardTest, FullyInvalidCardIsInvalid)
+{
+    Card card(Cards::Figure::None, Cards::Suit::None);
+    EXPECT_FALSE(CardUtils::isValid(card));
+}
