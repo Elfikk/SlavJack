@@ -1,6 +1,7 @@
 #pragma once
 
 #include "enums/figure.hpp"
+#include "enums/jokers.hpp"
 #include "enums/suit.hpp"
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -8,12 +9,11 @@
 struct Card
 {
     Card(Cards::Figure _figure, Cards::Suit _suit) : suit(_suit), figure(_figure) {}
-    Card(unsigned int id) : suit(Cards::Suit::None), figure(Cards::Figure::None), jokerId(id) {}
+    Card(Cards::JokerType id) : suit(Cards::Suit::None), figure(Cards::Figure::None), jokerId(id) {}
 
     Cards::Suit suit;
     Cards::Figure figure;
-    // Note: JokerId is 1 for Red, 2 for Black
-    unsigned int jokerId = 0;
+    Cards::JokerType jokerId = Cards::JokerType::None;
 };
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -22,14 +22,16 @@ namespace CardUtils
 {
     bool isStandardCard(const Card & card)
     {
-        return ((card.suit != Cards::Suit::None) && (card.figure != Cards::Figure::None) && (card.jokerId == 0));
+        return ((card.suit != Cards::Suit::None)
+             && (card.figure != Cards::Figure::None)
+             && (card.jokerId == Cards::JokerType::None));
     }
 
 //---------------------------------------------------------------------------------------------------------------------
 
     bool isJoker(const Card & card)
     {
-        return ((card.jokerId == 1 || card.jokerId == 2) &&
+        return ((card.jokerId == Cards::JokerType::Red || card.jokerId == Cards::JokerType::Black) &&
         (card.suit == Cards::Suit::None) && (card.figure == Cards::Figure::None));
     }
 

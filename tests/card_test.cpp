@@ -14,8 +14,9 @@ TEST(CardTest, ValidStandardCardIsValid)
 
 TEST(CardTest, ValidJokerCardIsValid)
 {
-    Card card(1);
+    Card card(Cards::JokerType::Red);
     EXPECT_TRUE(CardUtils::isValid(card));
+    EXPECT_TRUE(CardUtils::isJoker(card));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -31,24 +32,6 @@ TEST(CardTest, PartialInvalidCardIsInvalid)
 TEST(CardTest, PartialInvalidJokerCardIsInvalid)
 {
     Card card(Cards::Figure::Ten, Cards::Suit::None);
-    card.jokerId = 1;
+    card.jokerId = Cards::JokerType::Red;
     EXPECT_FALSE(CardUtils::isValid(card));
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-
-TEST(CardTest, JokerIsValid)
-{
-    Card card(1);
-    EXPECT_TRUE(CardUtils::isValid(card));
-    EXPECT_TRUE(CardUtils::isJoker(card));
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-
-TEST(CardTest, InvalidJokerIdIsInvalid)
-{
-    Card card(3);
-    EXPECT_FALSE(CardUtils::isValid(card));
-    EXPECT_FALSE(CardUtils::isJoker(card));
 }
