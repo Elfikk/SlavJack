@@ -15,16 +15,6 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(
-	hello_test
-	tests/hello_test.cpp
-)
-
-target_link_libraries(
-	hello_test
-	GTest::gtest_main
-)
-
 include_directories(
 	src/
 )
@@ -51,5 +41,5 @@ target_link_libraries(
 )
 
 include(GoogleTest)
-gtest_discover_tests(hello_test card_test card_deck)
+gtest_discover_tests(card_test card_deck)
 
