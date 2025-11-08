@@ -39,6 +39,17 @@ target_link_libraries(
 	GTest::gtest_main
 )
 
+add_executable(
+	card_deck_test
+	src/card_deck.cpp
+	tests/card_deck_test.cpp
+)
+
+target_link_libraries(
+	card_deck_test
+	GTest::gtest_main
+)
+
 include(GoogleTest)
-gtest_discover_tests(hello_test card_test)
+gtest_discover_tests(hello_test card_test card_deck)
 
