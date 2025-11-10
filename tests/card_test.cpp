@@ -1,4 +1,4 @@
-#include "card.hpp"
+#include "card_games/card.hpp"
 
 #include <gtest/gtest.h>
 

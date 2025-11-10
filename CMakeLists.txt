@@ -31,7 +31,7 @@ target_link_libraries(
 
 add_executable(
 	card_deck_test
-	src/card_deck.cpp
+	src/card_games/card_deck.cpp
 	tests/card_deck_test.cpp
 )
 
