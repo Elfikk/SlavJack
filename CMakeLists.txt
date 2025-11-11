@@ -40,6 +40,17 @@ target_link_libraries(
 	GTest::gtest_main
 )
 
+add_executable(
+	lobby_state_test
+	src/server_components/lobby_state.cpp
+	tests/lobby_state_test.cpp
+)
+
+target_link_libraries(
+	lobby_state_test
+	GTest::gtest_main
+)
+
 include(GoogleTest)
-gtest_discover_tests(card_test card_deck)
+gtest_discover_tests(card_test card_deck lobby_state_test)
 
