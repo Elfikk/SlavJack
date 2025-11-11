@@ -1,19 +1,9 @@
 #pragma once
 
+#include "server_components/player_id.hpp"
+
 #include <optional>
-#include <string>
 #include <vector>
-
-//---------------------------------------------------------------------------------------------------------------------
-
-struct PlayerId
-{
-    PlayerId(const std::string & playerName) : name(playerName) {}
-
-    bool operator==(const PlayerId & player) const { return name == player.name; }
-
-    std::string name;
-};
 
 //---------------------------------------------------------------------------------------------------------------------
 
