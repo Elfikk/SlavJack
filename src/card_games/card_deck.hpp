@@ -2,6 +2,7 @@
 
 #include "card.hpp"
 
+#include <optional>
 #include <vector>
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -17,6 +18,8 @@ public:
     void addCard(Card card) { cards.push_back(card); }
     Card at(std::size_t i) const { return cards[i]; }
     const std::vector<Card> & viewCards() const { return cards; }
+
+    std::optional<Card> drawCard();
 
     bool isEmpty() { return cards.size() == 0; }
     void shuffle();

@@ -46,6 +46,19 @@ void CardDeck::shuffle()
 
 //---------------------------------------------------------------------------------------------------------------------
 
+std::optional<Card> CardDeck::drawCard()
+{
+    if (!cards.size())
+    {
+        return std::nullopt;
+    }
+    Card card = cards.at(cards.size() - 1);
+    cards.pop_back();
+    return card;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+
 CardDeck CardDeckUtils::makeStandard52Deck()
 {
     CardDeck deck;
