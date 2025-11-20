@@ -1,5 +1,7 @@
 #pragma once
 
+#include <limits>
+
 namespace Cards
 {
     enum class Figure
@@ -17,6 +19,16 @@ namespace Cards
         Four = 4,
         Three = 3,
         Two = 2,
-        None = 0
+        None = std::numeric_limits<int>::max()
     };
+
+    inline int figureToInt(Figure figure)
+    {
+        return static_cast<int>(figure);
+    }
+
+    inline Figure toFigure(int value)
+    {
+        return static_cast<Figure>(value);
+    }
 }
