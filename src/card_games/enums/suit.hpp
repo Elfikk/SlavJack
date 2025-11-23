@@ -10,4 +10,14 @@ namespace Cards
         Spades = 3,
         None = 4
     };
+
+    inline bool isRed(Suit suit)
+    {
+        return ((suit == Suit::Hearts) || (suit == Suit::Diamonds));
+    }
+
+    inline bool isBlack(Suit suit)
+    {
+        return ((suit == Suit::Clubs) || (suit == Suit::Spades));
+    }
 }
