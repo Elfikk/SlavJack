@@ -20,6 +20,18 @@ include_directories(
 )
 
 add_executable(
+	blackjack_test
+	src/card_games/blackjack.cpp
+	src/card_games/card_deck.cpp
+	tests/blackjack_test.cpp
+)
+
+target_link_libraries(
+	blackjack_test
+	GTest::gtest_main
+)
+
+add_executable(
 	card_test
 	tests/card_test.cpp
 )
@@ -52,5 +64,5 @@ target_link_libraries(
 )
 
 include(GoogleTest)
-gtest_discover_tests(card_test card_deck lobby_state_test)
+gtest_discover_tests(blackjack_test card_test card_deck lobby_state_test)
 
