@@ -22,7 +22,7 @@ public:
 
     bool isLegitimateMove(const Card &) const;
     bool playMove(const Card &);
-    void chooseSuit(const Cards::Suit suit);
+    void chooseSuit(const Cards::Suit);
 
     Card getTopCard() const { return topCard; }
 
