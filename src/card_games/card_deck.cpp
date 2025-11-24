@@ -68,7 +68,7 @@ CardDeck CardDeckUtils::makeStandard52Deck()
         const Cards::Suit suit = static_cast<Cards::Suit>(i);
         for (auto j = 1; j < 14; j++)
         {
-            const Cards::Figure figure = static_cast<Cards::Figure>(j);
+            const auto figure = Cards::toFigure(j);
             deck.addCard(Card(figure, suit));
         }
     }
